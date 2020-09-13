@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+
+// TODO: Move teams array to separate file
 let teams = [
 {
   id: '1',
