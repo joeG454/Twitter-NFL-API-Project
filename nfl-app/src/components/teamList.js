@@ -18,17 +18,17 @@ class TeamList extends React.Component {
     render() {
         let filteredTeams = this.props.teams.filter(
             (team) => {
-                return team.name.indexOf(this.state.search) !== -1;
+                return team.name.toLowerCase().indexOf(this.state.search) !== -1;
             }
         );
         return (
             <div>
-                <div class="wrap">
-                    <div class="search">
-                        <input type="text"  class="searchTerm" 
+                <div className="wrap mx-auto text-center">
+                    <div className="search">
+                        <input type="text" className="searchTerm"  placeholder="Search for A Team"
                             value={this.state.search} 
                             onChange={this.updateSearch.bind(this)}/>
-                        <button type="submit"  class="searchButton">
+                        <button type="submit"  className="searchButton">
                             <FontAwesomeIcon
                                     icon={faSearch}
                                 />
@@ -36,13 +36,13 @@ class TeamList extends React.Component {
                     </div>
                 </div>
             
-                <ul>
+                <div className="margin-top-20">
                     {
                         filteredTeams.map((team) => {
-                            return <Team team={team}/>
+                            return <Team team={team} key={team.id}/>
                         })
                     }
-                </ul>
+                </div>
             </div>
         )
     }

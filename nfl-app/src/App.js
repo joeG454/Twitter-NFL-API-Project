@@ -1,6 +1,5 @@
 import React from 'react';
 import TeamList  from './components/teamList';
-import Search from './components/searchTeams';
 import './App.css';
 
 
