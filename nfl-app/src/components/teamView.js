@@ -1,8 +1,10 @@
 import React from 'react';
+import { getTeamTweets } from '../services/teamService';
 
 class Team extends React.Component {
-    expandTeam(e) {
+    expandTeam(e, data) {
         console.log('here: ' + e);
+        console.log(getTeamTweets(e));
         // TODO: Expand card and hit the twitter API
     }
 
@@ -13,7 +15,7 @@ class Team extends React.Component {
         };
         return (
             <div className="">
-                <div onClick={this.expandTeam.bind(this)} className="collapsible team-card display-flex justify-content-between">
+                <div onClick={this.expandTeam.bind(this, '#Vikings')} className="collapsible team-card display-flex justify-content-between">
                     <div className="team-label" style={teamNameStyle}>{this.props.team.name}</div>
                 </div>
                 <div className="content">

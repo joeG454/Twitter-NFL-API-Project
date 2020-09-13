@@ -15,12 +15,22 @@ var T = new Twit({
     strictSSL:            true,     // optional - requires SSL certificates to be valid.
 });
 
+var tweets = [];
 
 (async () => {
     T.get('search/tweets', { q: '#Vikings since:2011-07-11', count: 10 }, function(err, data, response) {
         console.log(data)
+        tweets = data;
     });
 })();
+
+app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, '../nfl-app/build')));
+
+app.get('/twitterApi/tweets', (req, res) => {
+  console.log('twitter API called!');
+  res.json(tweets);
+});
 
 app.listen(port, () => {
     console.log(`Server listening on the port::${port}`);
