@@ -1,18 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Team } from './components/team';
+import TeamList  from './components/teamList';
 import Search from './components/searchTeams';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className=""></header>
-      <Team></Team>
-      
-      <Search></Search>
-    </div>
-  );
+
+
+class App extends React.Component {
+  render() {
+    console.log(this.props.teams);
+    return (
+      <div className="App">
+        <header className=""></header>
+        <TeamList teams={this.props.teams}></TeamList>
+      </div>
+    )
+  }
 }
 
 export default App;

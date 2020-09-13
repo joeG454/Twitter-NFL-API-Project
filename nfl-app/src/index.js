@@ -4,9 +4,20 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+let teams = [{
+  name: 'Minnesota Vikings'
+},
+{
+  name: 'Oakland Raiders'
+},
+{
+  name: 'Los Angeles Chargers'
+}]
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App teams={teams}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
