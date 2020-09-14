@@ -10,7 +10,8 @@ class Team extends React.Component {
     }
     
     expandTeam(e, data) {
-        console.log(getTeamTweets(e));
+        console.log(this.props.team);
+        console.log(getTeamTweets(this.props.team));
         return (this.state.isActive ? this.setState({isActive: false}) : this.setState({isActive: true}));
     }
 

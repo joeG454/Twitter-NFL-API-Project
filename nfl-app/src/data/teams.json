@@ -1,7 +1,8 @@
 [
     {
 		"id": "1",
-		"name": "Arizona Cardinals",
+        "name": "Arizona Cardinals",
+        "query": "#Cardinals",
 		"background": "#97233F",
 		"color": "#FFFFFF"
 	}, {
