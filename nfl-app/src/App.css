@@ -63,7 +63,6 @@ p{
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
   font-size: 16px;
-  color: #FFFFFF;
 }
 nav{
   text-align: center;
@@ -232,14 +231,16 @@ div .underline{
   margin-top: 3rem;
 }
 
-.team-card{
+.team-card-wrapper{
   width: 60%;
+  max-width: 900px;
+  margin: 0.5em auto;
+}
+
+.team-card{
   background-color: #1A1A1B;
   padding: 10px 5px;
-  border-radius: 3px;
   text-align: center;
-  margin: 0.5em auto;
-
 }
 
 .team-label{
@@ -264,10 +265,15 @@ div .underline{
   content: "\2212";
 }
 
+.active + .content{
+  display: block;
+}
+
 .content {
-  padding: 0 18px;
-  max-height: 0;
+  display: none;
+  width: 100%;
+  margin: auto;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
+  color: #000;
   background-color: #f1f1f1;
 }

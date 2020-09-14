@@ -2,10 +2,16 @@ import React from 'react';
 import { getTeamTweets } from '../services/teamService';
 
 class Team extends React.Component {
+    constructor () {
+        super();
+        this.state = {
+            isActive: false
+        };
+    }
+    
     expandTeam(e, data) {
-        console.log('here: ' + e);
         console.log(getTeamTweets(e));
-        // TODO: Expand card and hit the twitter API
+        return (this.state.isActive ? this.setState({isActive: false}) : this.setState({isActive: true}));
     }
 
     render(){
@@ -13,9 +19,13 @@ class Team extends React.Component {
             backgroundColor: this.props.team.background,
             color: this.props.team.color
         };
+        let className = 'collapsible team-card display-flex justify-content-between';
+        if (this.state.isActive) {
+            className = 'active collapsible team-card display-flex justify-content-between';
+        }
         return (
-            <div className="">
-                <div onClick={this.expandTeam.bind(this, '#Vikings')} className="collapsible team-card display-flex justify-content-between">
+            <div className="team-card-wrapper">
+                <div onClick={this.expandTeam.bind(this)} className={className}>
                     <div className="team-label" style={teamNameStyle}>{this.props.team.name}</div>
                 </div>
                 <div className="content">
